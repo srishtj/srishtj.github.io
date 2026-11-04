@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=JetBrains+Mono&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=8">
+<link rel="stylesheet" href="assets/site.css?v=9">
 </head>
 <body>
 <canvas id="ghost" aria-hidden="true"></canvas>
@@ -39,6 +39,7 @@
     <section>
       <h2><span class="hl hl-1">what it is</span></h2>
       <p class="note" data-clear>echosystem turns news about a company or topic into a knowledge graph and a short written report, then checks that report against the articles it came from.</p>
+      <ol class="flow" aria-label="how it works"><li>collect</li><li>extract</li><li>connect</li><li>draft</li><li>audit</li></ol>
     </section>
     <section>
       <h2><span class="hl hl-1">my favorite part</span></h2>
@@ -56,8 +57,19 @@
       </ul>
     </section>
     <section>
+      <h2><span class="hl hl-1">see it running</span></h2>
+      <figure class="shot" data-clear>
+        <a href="assets/echosystem-graph.webp"><img src="assets/echosystem-graph.webp" alt="the echosystem dashboard's knowledge graph, with colored dots for companies, people, materials and products" width="1500" height="950"></a>
+        <figcaption>the knowledge graph after real news runs on nvidia and the boeing 737. every dot is something it extracted from an article.</figcaption>
+      </figure>
+      <figure class="shot" data-clear>
+        <a href="assets/echosystem-reports.webp"><img src="assets/echosystem-reports.webp" alt="two reports in the dashboard: a boeing 737 report marked pass and an nvidia report marked fail" width="1700" height="2005"></a>
+        <figcaption>two real reports. the boeing one passed on its second audit, with claims tied to its sources. the nvidia one wrongly said acer acquired nvidia, failed all three audits and was labeled unverified. a pass still only means the auditor found nothing wrong. captured from a local run in november 2026.</figcaption>
+      </figure>
+    </section>
+    <section>
       <h2><span class="hl hl-1">why a graph and vectors</span></h2>
-      <p class="note" data-clear>vector search finds passages that sound relevant, but it can't say how the companies in them relate. so retrieval takes the top 5 vector hits, then pulls up to 10 graph neighbors for each hit's main entity. the passages are the evidence, and the graph adds who's tied to whom.</p>
+      <p class="note" data-clear>vector search is good at finding relevant passages, and the graph makes the connections between companies explicit and easy to follow. so retrieval takes the top 5 vector hits, then pulls up to 10 graph neighbors for each hit's main entity.</p>
     </section>
     <section>
       <h2><span class="hl hl-1">when the auditor says no</span></h2>
@@ -67,16 +79,6 @@
         <blockquote>There is no information in the context about Netflix's current market position or future plans.<br><br>[UNVERIFIED: failed audit after 3 attempts. Review manually.]</blockquote>
         <figcaption>the articles it pulled were mostly about warhammer adaptations, not netflix. all three drafts failed the audit, and the report says so.</figcaption>
       </figure>
-    </section>
-    <section>
-      <h2><span class="hl hl-1">how it works</span></h2>
-      <ol class="steps">
-        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1.2deg)"><div class="top"><h3>collect</h3><p>pulls recent articles on a topic and cleans them up</p></div></li>
-        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1deg)"><div class="top"><h3>extract</h3><p>finds the people, companies and relationships in each one</p></div></li>
-        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-0.6deg)"><div class="top"><h3>connect</h3><p>stores them in a neo4j graph and qdrant vector search</p></div></li>
-        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1.3deg)"><div class="top"><h3>draft</h3><p>a researcher agent writes a report from what it retrieved</p></div></li>
-        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1deg)"><div class="top"><h3>audit</h3><p>an auditor checks the draft against its sources, with up to three tries</p></div></li>
-      </ol>
     </section>
     <section>
       <h2><span class="hl hl-1">the honest bit</span></h2>
@@ -90,7 +92,7 @@
       <h2><span class="hl hl-1">built with</span></h2>
       <ul class="tags"><li>python</li><li>langgraph</li><li>neo4j</li><li>qdrant</li><li>fastapi</li><li>celery</li><li>redis</li><li>next.js</li></ul>
     </section>
-    <section><div class="go"><a href="https://github.com/srishtj/echosystem">see the code on github</a><a href="td-synnex.html">next project →</a></div></section>
+    <section><div class="go"><a href="https://github.com/srishtj/echosystem">see the code on github</a><a href="td-synnex.html">← previous project</a><a href="hospital-research.html">next project →</a></div></section>
   </div>
 </main>
 <script src="assets/site.js?v=4"></script>

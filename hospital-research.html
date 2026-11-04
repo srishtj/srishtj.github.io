@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=JetBrains+Mono&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=8">
+<link rel="stylesheet" href="assets/site.css?v=9">
 </head>
 <body>
 <canvas id="ghost" aria-hidden="true"></canvas>
@@ -39,6 +39,7 @@
     <section>
       <h2><span class="hl hl-1">what it is</span></h2>
       <p class="note" data-clear>in clemson's watt ai program, i work with a research team on a system that lets hospital staff ask plain-english questions across large sets of safety reports. it looks for recurring patterns and cites the exact records behind each answer.</p>
+      <ol class="flow" aria-label="how it works"><li>ask</li><li>search</li><li>answer with citations</li><li>evaluate</li></ol>
     </section>
     <section>
       <h2><span class="hl hl-1">why it matters</span></h2>
@@ -64,15 +65,6 @@
       </figure>
     </section>
     <section>
-      <h2><span class="hl hl-1">how it works</span></h2>
-      <ol class="steps four">
-        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1.2deg)"><div class="top"><h3>ask</h3><p>staff ask a question in plain english</p></div></li>
-        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1deg)"><div class="top"><h3>search</h3><p>keyword and meaning-based search each find reports, then the results are combined</p></div></li>
-        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-0.6deg)"><div class="top"><h3>answer</h3><p>a language model answers from those reports and cites each record</p></div></li>
-        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1.3deg)"><div class="top"><h3>check</h3><p>the evaluation tests retrieval, citations and cost</p></div></li>
-      </ol>
-    </section>
-    <section>
       <h2><span class="hl hl-1">where it stands</span></h2>
       <dl class="ledger" data-clear>
         <div><dt>tested</dt><dd>the metric code and citation check pass their tests on synthetic data.</dd></div>
@@ -84,7 +76,7 @@
       <h2><span class="hl hl-1">built with</span></h2>
       <ul class="tags"><li>python</li><li>fastapi</li><li>chromadb</li><li>bm25</li><li>hybrid retrieval</li></ul>
     </section>
-    <section><div class="go"><a href="td-synnex.html">← previous project</a><a href="ipx-assistant.html">next project →</a></div></section>
+    <section><div class="go"><a href="echosystem.html">← previous project</a><a href="ipx-assistant.html">next project →</a></div></section>
   </div>
 </main>
 <script src="assets/site.js?v=4"></script>

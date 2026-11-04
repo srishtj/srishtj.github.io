@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=JetBrains+Mono&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=8">
+<link rel="stylesheet" href="assets/site.css?v=9">
 </head>
 <body>
 <canvas id="ghost" aria-hidden="true"></canvas>
@@ -39,6 +39,7 @@
     <section>
       <h2><span class="hl hl-1">what it is</span></h2>
       <p class="note" data-clear>a support assistant for microsoft azure questions, built with a team as a td synnex-sponsored capstone at clemson. it answers from trusted microsoft documentation and shows where each answer came from. when the docs don't support an answer, it says so instead of guessing.</p>
+      <ol class="flow" aria-label="how it works"><li>ask</li><li>search</li><li>answer or escalate</li></ol>
     </section>
     <section>
       <h2><span class="hl hl-1">what i built</span></h2>
@@ -50,15 +51,6 @@
         <li><strong>conversations:</strong> multi-turn threads stored in shared blob storage.</li>
         <li><strong>evaluation:</strong> i lead a four-person team on this. i built a 152-item test set with a separate held-out split, plus prompt-injection tests, including instructions planted inside retrieved documents.</li>
       </ul>
-    </section>
-    <section>
-      <h2><span class="hl hl-1">how it works</span></h2>
-      <ol class="steps four">
-        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1.2deg)"><div class="top"><h3>ask</h3><p>someone describes the azure problem they're stuck on</p></div></li>
-        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1deg)"><div class="top"><h3>search</h3><p>the agent finds the relevant microsoft documentation</p></div></li>
-        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-0.6deg)"><div class="top"><h3>answer</h3><p>a language model gives guidance backed by those docs</p></div></li>
-        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1.3deg)"><div class="top"><h3>escalate</h3><p>if the evidence falls short, it explains why and gives a next step</p></div></li>
-      </ol>
     </section>
     <section>
       <h2><span class="hl hl-1">when it can’t answer</span></h2>
@@ -76,7 +68,7 @@
       <h2><span class="hl hl-1">where it stands</span></h2>
       <dl class="ledger" data-clear>
         <div><dt>running</dt><dd>the assistant is deployed on azure, and we test it against live azure services.</dd></div>
-        <div><dt>results</dt><dd>benchmark numbers stay with the team for now because this is sponsored work.</dd></div>
+        <div><dt>results</dt><dd>we’ve run benchmarks, and the results are still being reviewed, so i’m not sharing numbers yet.</dd></div>
         <div><dt>planned</dt><dd>comparing it with web search and with a language model on its own, across accuracy, citation quality, latency and token usage.</dd></div>
       </dl>
     </section>
@@ -84,7 +76,7 @@
       <h2><span class="hl hl-1">built with</span></h2>
       <ul class="tags"><li>azure ai search</li><li>azure openai</li><li>azure container apps</li><li>azure blob storage</li><li>python</li><li>react</li></ul>
     </section>
-    <section><div class="go"><a href="echosystem.html">← previous project</a><a href="hospital-research.html">next project →</a></div></section>
+    <section><div class="go"><a href="echosystem.html">next project →</a></div></section>
   </div>
 </main>
 <script src="assets/site.js?v=4"></script>

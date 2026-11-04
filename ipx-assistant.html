@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=JetBrains+Mono&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=8">
+<link rel="stylesheet" href="assets/site.css?v=9">
 </head>
 <body>
 <canvas id="ghost" aria-hidden="true"></canvas>
@@ -39,10 +39,11 @@
     <section>
       <h2><span class="hl hl-1">what it is</span></h2>
       <p class="note" data-clear>as an it intern at clemson's watt family innovation center, i built an assistant that lets you ask about the building's av network in plain english, like which encoders in a room have no signal.</p>
+      <ol class="flow" aria-label="how it works"><li>scrape</li><li>ask</li><li>look up</li><li>answer</li></ol>
     </section>
     <section>
       <h2><span class="hl hl-1">my favorite part</span></h2>
-      <p class="note" data-clear>it can look, but it can't touch. the assistant only sends read commands and queries a read-only database, so nothing it does can change routing or settings. a wrong answer can't break a live event.</p>
+      <p class="note" data-clear>it can look, but it can't touch. the assistant only sends read commands and queries a read-only database, so it can't directly change routing or settings. people still decide what to do with its answers.</p>
     </section>
     <section>
       <h2><span class="hl hl-1">what i built</span></h2>
@@ -56,20 +57,19 @@
     </section>
     <section>
       <h2><span class="hl hl-1">what it looks like</span></h2>
-      <figure class="artifact" data-clear>
-        <span class="label">made-up example, not real data</span>
-        <blockquote>q: which encoders in room 000 have no signal?<br>a: 2 of 6: encoder-a and encoder-d.</blockquote>
-        <figcaption>the real panel shows building data, so i’m keeping that off this site.</figcaption>
+      <figure class="artifact wide" data-clear>
+        <span class="label">made-up demo, not real data</span>
+        <div class="ipx-demo" role="img" aria-label="a recreated ipx assistant panel with made-up rooms and devices, answering that 2 of 6 encoders in room a have no signal">
+          <div class="ipx-head"><span class="ipx-badge"><b>IPX</b><i>demo</i></span><strong>IPX Assistant</strong><span class="ipx-tabs"><u>floor 1</u><span>floor 2</span><span>floor 3</span></span><span class="ipx-clock">10:24 am</span></div>
+          <div class="ipx-tiles"><span class="on">room a<small>6 devices · 2 no signal</small></span><span>room b<small>4 devices</small></span><span>lab 1<small>8 devices</small></span><span>studio<small>5 devices</small></span><span>lobby<small>3 devices</small></span></div>
+          <div class="ipx-cols">
+            <div><h4>room a devices</h4><p class="dev"><b>encoder-a</b><em>no signal</em></p><p class="dev"><b>encoder-b</b>1080p60</p><p class="dev"><b>encoder-c</b>4k30</p><p class="dev"><b>encoder-d</b><em>no signal</em></p></div>
+            <div><h4>assistant</h4><p class="msg me">which encoders in room a have no signal?</p><p class="msg">2 of 6: encoder-a and encoder-d.</p><code>room_overview(“room a”)</code></div>
+            <div><h4>status</h4><p class="stat"><small>devices</small><b>26</b></p><p class="stat"><small>no signal</small><b>2</b></p><p class="stat"><small>last scrape</small><b>1 min ago</b></p></div>
+          </div>
+        </div>
+        <figcaption>a recreation of the panel i built, with invented rooms and devices. the real one shows building data, so i’m keeping it off this site.</figcaption>
       </figure>
-    </section>
-    <section>
-      <h2><span class="hl hl-1">how it works</span></h2>
-      <ol class="steps four">
-        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1.2deg)"><div class="top"><h3>scrape</h3><p>a background job copies the network’s state into sqlite</p></div></li>
-        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1deg)"><div class="top"><h3>ask</h3><p>someone types a question in plain english</p></div></li>
-        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-0.6deg)"><div class="top"><h3>look up</h3><p>the model calls read-only tools to find the answer</p></div></li>
-        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1.3deg)"><div class="top"><h3>answer</h3><p>it replies from the data, with no way to change it</p></div></li>
-      </ol>
     </section>
     <section>
       <h2><span class="hl hl-1">where it stands</span></h2>
