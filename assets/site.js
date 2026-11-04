@@ -15,7 +15,7 @@
     'while (making) { learn(); ship(); write(); }'
   ];
   var FONT = '12px "JetBrains Mono", monospace', LH = 17, PAD = 8, RADIUS = 115;
-  var REST = 'rgba(96, 88, 74, .055)', LIT = '#7a7264', PEAK = COARSE ? .2 : .3, DECAY = .972;
+  var REST = 'rgba(96, 88, 74, .04)', LIT = '#7a7264', PEAK = COARSE ? .2 : .3, DECAY = .972;
   var W = 0, H = 0, CW = 7.2, cols = 0, rows = 0, lines = [], g = null, base = null;
   var x = -999, y = -999, tx = -999, ty = -999, seen = false, t = 0, dirty = true, lit = 0;
   var clears = [].slice.call(document.querySelectorAll('[data-clear]'));
@@ -176,7 +176,7 @@
         else g[n] *= .982;
       }
       var tone = Math.min(1, Math.max(0, (dark[n] - .13) / .42));
-      var a = Math.max(edge[n] ? .3 * (1 - wake) : 0, Math.max(g[n], wake * .92) * tone);
+      var a = Math.max(edge[n] ? .55 * (1 - wake) : 0, Math.max(g[n], wake * .92) * tone);
       var level = Math.max(g[n], wake);
       if (level > .02) {
         c.globalAlpha = level * .62 * Math.pow(Math.min(1, dark[n] * 1.15), 1.35);

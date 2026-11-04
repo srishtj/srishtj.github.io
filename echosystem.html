@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=JetBrains+Mono&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=5">
+<link rel="stylesheet" href="assets/site.css?v=8">
 </head>
 <body>
 <canvas id="ghost" aria-hidden="true"></canvas>
@@ -41,6 +41,34 @@
       <p class="note" data-clear>echosystem turns news about a company or topic into a knowledge graph and a short written report, then checks that report against the articles it came from.</p>
     </section>
     <section>
+      <h2><span class="hl hl-1">my favorite part</span></h2>
+      <p class="note" data-clear>when two articles disagree, the graph doesn't pick a winner. it keeps both claims and links them as a contradiction, so the conflict stays visible.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">what i built</span></h2>
+      <p class="note" data-clear>this one is a solo project, from the first commit to the dashboard.</p>
+      <ul class="built" data-clear>
+        <li><strong>ingestion:</strong> a background worker pulls up to 8 recent articles per topic, cleans them and splits them into chunks.</li>
+        <li><strong>extraction:</strong> a small language model finds entities and relationships, and every result is validated against a fixed schema.</li>
+        <li><strong>the graph:</strong> entities, relationships and claims go into neo4j, and each new claim gets checked against the existing ones for contradictions.</li>
+        <li><strong>the audit loop:</strong> a langgraph workflow where a researcher drafts and a separate auditor returns a structured verdict.</li>
+        <li><strong>the app:</strong> a fastapi backend and a next.js dashboard for reports, a watchlist and open questions.</li>
+      </ul>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">why a graph and vectors</span></h2>
+      <p class="note" data-clear>vector search finds passages that sound relevant, but it can't say how the companies in them relate. so retrieval takes the top 5 vector hits, then pulls up to 10 graph neighbors for each hit's main entity. the passages are the evidence, and the graph adds who's tied to whom.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">when the auditor says no</span></h2>
+      <p class="note" data-clear>the auditor returns pass or fail, a reason, and the claims it flagged. on a fail, the researcher redrafts with that reason added to its prompt. after three failed audits, the report is saved with an unverified note instead of being passed off as checked.</p>
+      <figure class="artifact" data-clear>
+        <span class="label">real output, netflix run</span>
+        <blockquote>There is no information in the context about Netflix's current market position or future plans.<br><br>[UNVERIFIED: failed audit after 3 attempts. Review manually.]</blockquote>
+        <figcaption>the articles it pulled were mostly about warhammer adaptations, not netflix. all three drafts failed the audit, and the report says so.</figcaption>
+      </figure>
+    </section>
+    <section>
       <h2><span class="hl hl-1">how it works</span></h2>
       <ol class="steps">
         <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1.2deg)"><div class="top"><h3>collect</h3><p>pulls recent articles on a topic and cleans them up</p></div></li>
@@ -51,12 +79,12 @@
       </ol>
     </section>
     <section>
-      <h2><span class="hl hl-1">my favorite part</span></h2>
-      <p class="note" data-clear>when two articles disagree, the graph doesn't pick a winner. it keeps both claims and links them as a contradiction, so the conflict stays visible.</p>
-    </section>
-    <section>
       <h2><span class="hl hl-1">the honest bit</span></h2>
-      <p class="note" data-clear>it's a prototype. the auditor is a language model comparing text to text, so a pass means it found nothing wrong, not that the report is true. anything still unsupported after the last try gets flagged for a human.</p>
+      <dl class="ledger" data-clear>
+        <div><dt>tested</dt><dd>automated tests cover the audit routing, the contradiction logic and the report storage.</dd></div>
+        <div><dt>not measured yet</dt><dd>i don't have labeled data, so how often the auditor or the contradiction check is right hasn't been measured. a pass means the model found nothing wrong, not that the report is true.</dd></div>
+        <div><dt>known limits</dt><dd>contradiction detection is keyword-based by default, and entities match by exact name, so “nvidia” and “nvidia corp” become two nodes.</dd></div>
+      </dl>
     </section>
     <section>
       <h2><span class="hl hl-1">built with</span></h2>
@@ -65,6 +93,6 @@
     <section><div class="go"><a href="https://github.com/srishtj/echosystem">see the code on github</a><a href="td-synnex.html">next project →</a></div></section>
   </div>
 </main>
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=4"></script>
 </body>
 </html>

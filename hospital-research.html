@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hospital safety research | srishti</title>
+<meta name="description" content="a retrieval system for hospital safety reports that cites the exact records behind each answer, and the evaluation that checks it.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="srishti jaiswal">
+<meta property="og:title" content="hospital safety research | srishti">
+<meta property="og:description" content="a retrieval system for hospital safety reports that cites the exact records behind each answer, and the evaluation that checks it.">
+<meta property="og:url" content="https://srishtj.github.io/hospital-research.html">
+<meta property="og:image" content="https://srishtj.github.io/assets/linkedin-thumbnail.png">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1254">
+<meta property="og:image:alt" content="a scrapbook page reading meet srishti, with a plush cat on a laptop, felt stars and faint code">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=8">
+</head>
+<body>
+<canvas id="ghost" aria-hidden="true"></canvas>
+<a class="back" href="index.html#work">← back to work</a>
+<main>
+  <section class="hero short">
+    <div class="sheet">
+      <img class="paper" src="assets/paper-wide.webp" alt="">
+      <div class="top">
+        <span class="label">watt ai program, aug 2026 – present</span>
+        <h1 aria-label="hospital research"><span class="hl hl-1">hospital</span><span class="hl hl-2">research</span></h1>
+      </div>
+      <img class="stk s-stars" src="assets/stars.png" alt="" draggable="false">
+      <img class="stk s-spark" src="assets/gold-spark.png" alt="" draggable="false" style="--r:4deg">
+    </div>
+  </section>
+  <div class="detail">
+    <section>
+      <h2><span class="hl hl-1">what it is</span></h2>
+      <p class="note" data-clear>in clemson's watt ai program, i work with a research team on a system that lets hospital staff ask plain-english questions across large sets of safety reports. it looks for recurring patterns and cites the exact records behind each answer.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">why it matters</span></h2>
+      <p class="note" data-clear>safety reports hold real lessons, but nobody has time to read them all. and in a hospital, an answer you can't trace back to its records isn't one you should act on.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">what i built</span></h2>
+      <p class="note" data-clear>my part is the evaluation: how we find out whether the system deserves that trust.</p>
+      <ul class="built" data-clear>
+        <li><strong>relevance labels:</strong> a way for people to grade every report any setup retrieved for a question, so scores come from human judgment.</li>
+        <li><strong>retrieval metrics:</strong> hit rate, precision, recall and ndcg, plus a paired measure of whether rewriting the question actually helps.</li>
+        <li><strong>citation checks:</strong> a check that every record an answer cites is one the model actually saw.</li>
+        <li><strong>cost tracing:</strong> time, model calls and tokens for each stage of every query.</li>
+      </ul>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">my favorite part</span></h2>
+      <p class="note" data-clear>a report nobody has graded yet doesn't count as irrelevant. it counts as unknown. so instead of one number that looks final, the score comes back as a range until the labels are in.</p>
+      <figure class="artifact" data-clear>
+        <span class="label">made-up example, not a result</span>
+        <blockquote>precision@2: 0.5 to 1.0<br>status: partial, 1 report ungraded</blockquote>
+        <figcaption>this comes from a test with synthetic labels. it shows how the safeguard behaves.</figcaption>
+      </figure>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">how it works</span></h2>
+      <ol class="steps four">
+        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1.2deg)"><div class="top"><h3>ask</h3><p>staff ask a question in plain english</p></div></li>
+        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1deg)"><div class="top"><h3>search</h3><p>keyword and meaning-based search each find reports, then the results are combined</p></div></li>
+        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-0.6deg)"><div class="top"><h3>answer</h3><p>a language model answers from those reports and cites each record</p></div></li>
+        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1.3deg)"><div class="top"><h3>check</h3><p>the evaluation tests retrieval, citations and cost</p></div></li>
+      </ol>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">where it stands</span></h2>
+      <dl class="ledger" data-clear>
+        <div><dt>tested</dt><dd>the metric code and citation check pass their tests on synthetic data.</dd></div>
+        <div><dt>not measured yet</dt><dd>human grading hasn’t happened, so there are no real relevance scores. whether each claim is supported by its records hasn’t been evaluated either.</dd></div>
+        <div><dt>next</dt><dd>agreeing on a set of questions with my research lead, grading the results, and measuring faithfulness.</dd></div>
+      </dl>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">built with</span></h2>
+      <ul class="tags"><li>python</li><li>fastapi</li><li>chromadb</li><li>bm25</li><li>hybrid retrieval</li></ul>
+    </section>
+    <section><div class="go"><a href="td-synnex.html">← previous project</a><a href="ipx-assistant.html">next project →</a></div></section>
+  </div>
+</main>
+<script src="assets/site.js?v=4"></script>
+</body>
+</html>

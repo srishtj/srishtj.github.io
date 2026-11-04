@@ -85,7 +85,7 @@ h2 { margin: 0 0 54px; font-size: clamp(48px, 8vw, 92px); font-weight: 700; lett
 .scrap:nth-child(2) { grid-column: 7 / 13; margin-top: 56px; }
 .scrap .paper { transform: rotate(var(--t, 0deg)); }
 .scrap .top { height: 100%; padding: 9% 9%; transform: rotate(var(--t, 0deg)); display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; }
-.scrap .label { font-size: 14px; margin-bottom: auto; }
+.scrap .label { font-size: 14px; }
 .scrap h3 { margin: 0; font-size: clamp(24px, 3vw, 40px); line-height: 1.05; letter-spacing: -.02em; width: fit-content; background: var(--highlight); padding: 0 .16em; }
 .scrap p { margin: 0; font-size: 16px; line-height: 1.45; color: var(--ink-soft); max-width: 34ch; background: var(--label); padding: .35em .55em; width: fit-content; }
 
@@ -132,36 +132,58 @@ h2 { margin: 0 0 54px; font-size: clamp(48px, 8vw, 92px); font-weight: 700; lett
 .portrait canvas { position: absolute; inset: 6% 5% 6%; width: 90%; height: 88%; z-index: 2; }
 .portrait .label { position: absolute; z-index: 3; left: 50%; bottom: -8px; transform: translateX(-50%) rotate(-2deg); font-size: 14px; white-space: nowrap; }
 
-.hero.short { min-height: 0; padding: 92px 0 56px; }
-.short .sheet { aspect-ratio: 2000 / 900; }
+.hero.short { min-height: 0; padding: 70px 0 34px; }
+.short .sheet { aspect-ratio: 2000 / 450; }
 .short .paper { object-fit: fill; }
-.short h1 { font-size: calc(var(--sw) * .105); margin-top: calc(var(--sw) * .012); }
-.short .sheet .top { padding: calc(var(--sw) * .055) calc(var(--sw) * .08) calc(var(--sw) * .045); }
+.short .s-swirl { width: 12%; left: auto; right: -2.5%; top: auto; bottom: -22%; }
+.short h1 { font-size: calc(var(--sw) * .078); margin-top: calc(var(--sw) * .012); }
+.short .hl { display: inline-block; }
+.short .hl-1::before { right: -.04em; }
+.short .hl-2 { margin: 0 0 0 .2em; }
+.short .hl-2::before { left: -.04em; }
+.short .sheet .top { padding: calc(var(--sw) * .045) calc(var(--sw) * .08) calc(var(--sw) * .03); }
 .back { position: fixed; top: 18px; left: 18px; z-index: 6; background: var(--label); color: var(--ink); font-size: 15px; font-weight: 700; text-decoration: none; padding: 6px 12px; }
 .back:hover { background: var(--highlight); }
-.detail { width: min(960px, 90vw); margin: 0 auto; padding: 8px 0 110px; display: grid; gap: 60px; }
+.detail { width: min(960px, 90vw); margin: 0 auto; padding: 8px 0 110px; display: grid; gap: 46px; }
 .detail section { display: grid; gap: 18px; justify-items: start; }
 .detail h2 { font-size: clamp(32px, 4.6vw, 52px); margin: 0 0 8px; }
 .note { position: relative; z-index: 2; margin: 0; max-width: 62ch; background: var(--label); padding: .6em .8em; font-size: 18px; line-height: 1.5; }
 .steps { list-style: none; margin: 0; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 18px; counter-reset: s; }
 .steps li { position: relative; aspect-ratio: 820 / 640; counter-increment: s; }
+@media (min-width: 761px) { .steps.four { grid-template-columns: repeat(4, 1fr); } .steps.four li { aspect-ratio: 1; } .steps.four .top { padding: 12% 11%; } }
 .steps .top { height: 100%; padding: 13% 12%; display: flex; flex-direction: column; justify-content: center; gap: 6px; }
 .steps h3 { margin: 0; font-size: 21px; letter-spacing: -.015em; width: fit-content; background: var(--highlight); padding: 0 .2em; }
 .steps h3::before { content: counter(s) ". "; }
 .steps p { margin: 0; font-size: 15px; line-height: 1.35; background: var(--label); padding: .25em .45em; }
 .tags { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .tags li { background: var(--highlight); font-weight: 700; font-size: 15px; padding: .25em .55em; }
+.built { position: relative; z-index: 2; margin: 0; padding: 0; list-style: none; max-width: 68ch; display: grid; gap: 8px; justify-items: start; }
+.built li { background: var(--label); padding: .4em .7em; font-size: 17px; line-height: 1.45; }
+.built li:nth-child(even) { margin-left: 18px; }
+.ledger { position: relative; z-index: 2; margin: 0; width: 100%; max-width: 760px; display: grid; gap: 8px; }
+.ledger div { display: grid; grid-template-columns: 170px 1fr; background: var(--label); }
+.ledger dt { background: var(--highlight); font-weight: 700; padding: .5em .7em; font-size: 16px; }
+.ledger dd { margin: 0; padding: .5em .7em; font-size: 17px; line-height: 1.45; }
+.artifact { position: relative; z-index: 2; margin: 6px 0 0; max-width: 640px; display: grid; gap: 10px; justify-items: start; background: #fbf6ea; padding: 22px 24px 18px; box-shadow: 0 3px 9px rgba(60, 45, 30, .2); transform: rotate(-.5deg); }
+.artifact .label { font-size: 14px; }
+.artifact blockquote { margin: 0; font-family: "JetBrains Mono", monospace; font-size: 15px; line-height: 1.55; }
+.artifact figcaption { font-size: 15px; line-height: 1.4; color: var(--ink-soft); }
 .go { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 12px; }
 .go a { color: var(--ink); font-weight: 700; text-decoration: none; background: var(--label); padding: .4em .65em; font-size: 18px; transition: transform .15s; }
 .go a:hover { transform: rotate(-2deg) scale(1.05); background: var(--highlight); }
 
+.peek { display: block; width: 100%; flex: 1 1 0; min-height: 0; margin: 6px 0; }
+@media (min-width: 761px) { .scrap:nth-child(3) { grid-column: 1 / 7; } .scrap:nth-child(4) { grid-column: 7 / 13; margin-top: 56px; } }
 @media (max-width: 760px) {
+  .ledger div { grid-template-columns: 1fr; }
+  .built li:nth-child(even) { margin-left: 0; }
+  .artifact { padding: 18px 16px 14px; }
+  .peek { flex: 0 0 auto; height: 74px; }
+  .scrap { aspect-ratio: auto; min-height: 300px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-text p:nth-child(even) { margin-left: 0; }
-  .short .sheet { aspect-ratio: 1100 / 760; }
+  .short .sheet { aspect-ratio: 1100 / 620; }
   .short h1 { font-size: 13vw; margin-top: 4vw; }
-  .short .hl-1::before { right: -.04em; }
-  .short .hl-2 { margin-left: .6em; }
   .short .s-swirl { width: 21%; left: auto; right: -3%; top: auto; bottom: -13%; }
   .short .s-spark { width: 12%; top: -12%; }
   .short .sheet .top { padding: 9vw 8vw 7vw; }

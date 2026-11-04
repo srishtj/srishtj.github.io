@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ipx assistant | srishti</title>
+<meta name="description" content="a read-only ai assistant that answers plain-english questions about a building’s av network.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="srishti jaiswal">
+<meta property="og:title" content="ipx assistant | srishti">
+<meta property="og:description" content="a read-only ai assistant that answers plain-english questions about a building’s av network.">
+<meta property="og:url" content="https://srishtj.github.io/ipx-assistant.html">
+<meta property="og:image" content="https://srishtj.github.io/assets/linkedin-thumbnail.png">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1254">
+<meta property="og:image:alt" content="a scrapbook page reading meet srishti, with a plush cat on a laptop, felt stars and faint code">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=8">
+</head>
+<body>
+<canvas id="ghost" aria-hidden="true"></canvas>
+<a class="back" href="index.html#work">← back to work</a>
+<main>
+  <section class="hero short">
+    <div class="sheet">
+      <img class="paper" src="assets/paper-wide.webp" alt="">
+      <div class="top">
+        <span class="label">watt innovation center, 2026</span>
+        <h1 aria-label="ipx assistant"><span class="hl hl-1">ipx</span><span class="hl hl-2">assistant</span></h1>
+      </div>
+      <img class="stk s-swirl" src="assets/swirl-star.png" alt="" draggable="false" style="--r:-3deg">
+      <img class="stk s-spark" src="assets/gold-spark.png" alt="" draggable="false" style="--r:4deg">
+    </div>
+  </section>
+  <div class="detail">
+    <section>
+      <h2><span class="hl hl-1">what it is</span></h2>
+      <p class="note" data-clear>as an it intern at clemson's watt family innovation center, i built an assistant that lets you ask about the building's av network in plain english, like which encoders in a room have no signal.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">my favorite part</span></h2>
+      <p class="note" data-clear>it can look, but it can't touch. the assistant only sends read commands and queries a read-only database, so nothing it does can change routing or settings. a wrong answer can't break a live event.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">what i built</span></h2>
+      <ul class="built" data-clear>
+        <li><strong>the scraper:</strong> a background job that pulls 300+ devices and 3,000+ streams across 50 rooms into sqlite, and records what changed between scrapes.</li>
+        <li><strong>the agent:</strong> read-only tools for room overviews, device details and sql lookups, so the model answers from real data.</li>
+        <li><strong>model choices:</strong> it runs on claude, gemini or a free local model. on gemini’s free tier, it moves to the next model when one runs out of daily quota.</li>
+        <li><strong>the panel:</strong> a flask web panel styled after the building’s touch panel.</li>
+      </ul>
+      <p class="note" data-clear>also at watt: a java scheduling system that automates about 80% of recurring lighting operations.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">what it looks like</span></h2>
+      <figure class="artifact" data-clear>
+        <span class="label">made-up example, not real data</span>
+        <blockquote>q: which encoders in room 000 have no signal?<br>a: 2 of 6: encoder-a and encoder-d.</blockquote>
+        <figcaption>the real panel shows building data, so i’m keeping that off this site.</figcaption>
+      </figure>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">how it works</span></h2>
+      <ol class="steps four">
+        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1.2deg)"><div class="top"><h3>scrape</h3><p>a background job copies the network’s state into sqlite</p></div></li>
+        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1deg)"><div class="top"><h3>ask</h3><p>someone types a question in plain english</p></div></li>
+        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-0.6deg)"><div class="top"><h3>look up</h3><p>the model calls read-only tools to find the answer</p></div></li>
+        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1.3deg)"><div class="top"><h3>answer</h3><p>it replies from the data, with no way to change it</p></div></li>
+      </ol>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">where it stands</span></h2>
+      <dl class="ledger" data-clear>
+        <div><dt>status</dt><dd>a working prototype. the goal is to deploy it so staff can use it day to day.</dd></div>
+        <div><dt>works well</dt><dd>single lookups, even on the small local model.</dd></div>
+        <div><dt>known limits</dt><dd>the local model often gets joins and multi-device summaries wrong, so stronger models are better when the answer matters.</dd></div>
+        <div><dt>not measured yet</dt><dd>i haven’t formally tested its accuracy.</dd></div>
+      </dl>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">built with</span></h2>
+      <ul class="tags"><li>python</li><li>sqlite</li><li>flask</li><li>claude</li><li>gemini</li><li>ollama</li></ul>
+    </section>
+    <section><div class="go"><a href="hospital-research.html">← previous project</a><a href="index.html#say">say hi</a></div></section>
+  </div>
+</main>
+<script src="assets/site.js?v=4"></script>
+</body>
+</html>

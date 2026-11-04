@@ -87,7 +87,7 @@ Depth comes from real objects only: soft warm drop shadows under paper and stick
 
 ## Components
 
-- **Ghost code:** monospace code across the viewport, almost invisible at rest (about 5% opacity). It rises to 30% within 115px of the cursor (20% on touch), then fades slowly like e-paper ghosting.
+- **Ghost code:** monospace code across the viewport, almost invisible at rest (about 4% opacity). It rises to 30% within 115px of the cursor (20% on touch), then fades slowly like e-paper ghosting.
 - **Stickers:** real cut-outs, draggable, with a shadow that lifts on hover.
 - **Page counter:** a small grey pill like an Instagram carousel counter, tracking the current section.
 - **Cursor:** a crisp black-and-white pixel arrow, kept within 32px.
