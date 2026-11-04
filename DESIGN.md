@@ -90,8 +90,8 @@ Depth comes from real objects only: soft warm drop shadows under paper and stick
 - **Ghost code:** monospace code across the viewport, almost invisible at rest (about 5% opacity). It rises to 30% within 115px of the cursor (20% on touch), then fades slowly like e-paper ghosting.
 - **Stickers:** real cut-outs, draggable, with a shadow that lifts on hover.
 - **Page counter:** a small grey pill like an Instagram carousel counter, tracking the current section.
-- **Cursor:** a chunky pixel arrow.
-- **Code portrait:** a cut-out photo redrawn in monospace characters on torn paper. Only a faint outline shows at rest; the cursor fills in the face, then it fades back. On touch it wakes up by itself.
+- **Cursor:** a crisp black-and-white pixel arrow, kept within 32px.
+- **Code portrait:** a cut-out photo redrawn in monospace characters on torn paper. Only a faint outline shows at rest; the cursor fills in the face, then it fades back. On touch, a tap wakes it and a second tap or scrolling away puts it back to sleep.
 - **Project pages:** a short torn-sheet header, then numbered paper scraps for how it works, ending with an honest note about what the project is and isn't.
 
 ## Do's and Don'ts
