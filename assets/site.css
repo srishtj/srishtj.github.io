@@ -72,7 +72,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--red); outline-o
 .stk:hover { filter: drop-shadow(0 7px 7px rgba(50, 35, 20, .3)); }
 .s-swirl { width: 17%; left: -4.5%; top: -7%; }
 .s-spark { width: 10.5%; right: -3%; top: -8%; }
-.s-stars { width: 16%; left: -4.5%; bottom: -9%; }
+.s-stars { width: 13.5%; left: -7%; bottom: -13%; }
 .s-tape  { width: 21%; right: -5%; bottom: -13%; }
 .s-cat   { width: 10.5%; right: 1.2%; bottom: 15%; z-index: 4; }
 .s-clip  { width: 4.2%; left: 47%; top: -5.5%; filter: drop-shadow(1px 2px 1.5px rgba(30, 20, 10, .4)); }
@@ -106,7 +106,7 @@ h2 { margin: 0 0 54px; font-size: clamp(48px, 8vw, 92px); font-weight: 700; lett
   .sub { font-size: 15px; gap: 8px; }
   .s-swirl { width: 27%; left: -5%; top: -5%; }
   .s-spark { width: 16%; top: -5%; }
-  .s-stars { width: 22%; bottom: -5%; }
+  .s-stars { width: 18%; left: -5%; bottom: -8%; }
   .s-tape { width: 30%; bottom: -11%; right: -6%; }
   .s-cat { width: 17%; bottom: 3%; right: -1%; }
   .sub p { max-width: 74%; }
