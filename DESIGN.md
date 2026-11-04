@@ -91,6 +91,8 @@ Depth comes from real objects only: soft warm drop shadows under paper and stick
 - **Stickers:** real cut-outs, draggable, with a shadow that lifts on hover.
 - **Page counter:** a small grey pill like an Instagram carousel counter, tracking the current section.
 - **Cursor:** a chunky pixel arrow.
+- **Code portrait:** a cut-out photo redrawn in monospace characters on torn paper. Only a faint outline shows at rest; the cursor fills in the face, then it fades back. On touch it wakes up by itself.
+- **Project pages:** a short torn-sheet header, then numbered paper scraps for how it works, ending with an honest note about what the project is and isn't.
 
 ## Do's and Don'ts
 

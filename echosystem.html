@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>echosystem ai | srishti</title>
+<meta name="description" content="a multi-agent platform that researches companies and markets, then checks its own conclusions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<canvas id="ghost" aria-hidden="true"></canvas>
+<a class="back" href="index.html#work">← back to work</a>
+<main>
+  <section class="hero short">
+    <div class="sheet">
+      <img class="paper" src="assets/paper-wide.webp" alt="">
+      <div class="top">
+        <span class="label">2026 – present</span>
+        <h1 aria-label="echosystem ai"><span class="hl hl-1">echosystem</span><span class="hl hl-2">ai</span></h1>
+      </div>
+      <img class="stk s-swirl" src="assets/swirl-star.png" alt="" draggable="false" style="--r:-3deg">
+      <img class="stk s-spark" src="assets/gold-spark.png" alt="" draggable="false" style="--r:4deg">
+    </div>
+  </section>
+  <div class="detail">
+    <section>
+      <h2><span class="hl hl-1">what it is</span></h2>
+      <p class="note" data-clear>echosystem turns news about a company or topic into a knowledge graph and a short written report, then checks that report against the articles it came from.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">how it works</span></h2>
+      <ol class="steps">
+        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1.2deg)"><div class="top"><h3>collect</h3><p>pulls recent articles on a topic and cleans them up</p></div></li>
+        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1deg)"><div class="top"><h3>extract</h3><p>finds the people, companies and relationships in each one</p></div></li>
+        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-0.6deg)"><div class="top"><h3>connect</h3><p>stores them in a neo4j graph and qdrant vector search</p></div></li>
+        <li><img class="paper" src="assets/scrap-2.webp" alt="" style="transform:rotate(1.3deg)"><div class="top"><h3>draft</h3><p>a researcher agent writes a report from what it retrieved</p></div></li>
+        <li><img class="paper" src="assets/scrap-1.webp" alt="" style="transform:rotate(-1deg)"><div class="top"><h3>audit</h3><p>an auditor checks the draft against its sources, with up to three tries</p></div></li>
+      </ol>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">my favorite part</span></h2>
+      <p class="note" data-clear>when two articles disagree, the graph doesn't pick a winner. it keeps both claims and links them as a contradiction, so the conflict stays visible.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">the honest bit</span></h2>
+      <p class="note" data-clear>it's a prototype. the auditor is a language model comparing text to text, so a pass means it found nothing wrong, not that the report is true. anything still unsupported after the last try gets flagged for a human.</p>
+    </section>
+    <section>
+      <h2><span class="hl hl-1">built with</span></h2>
+      <ul class="tags"><li>python</li><li>langgraph</li><li>neo4j</li><li>qdrant</li><li>fastapi</li><li>celery</li><li>redis</li><li>next.js</li></ul>
+    </section>
+    <section><div class="go"><a href="https://github.com/srishtj/echosystem">see the code on github</a><a href="td-synnex.html">next project →</a></div></section>
+  </div>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>
