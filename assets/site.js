@@ -206,3 +206,27 @@
   if (document.fonts && document.fonts.load) document.fonts.load(FONT).then(build);
   requestAnimationFrame(frame);
 })();
+
+(function () {
+  var links = document.querySelectorAll('.shot a');
+  if (!links.length || !window.HTMLDialogElement) return;
+  var box = document.createElement('dialog'), close = document.createElement('button'), big = document.createElement('img');
+  box.className = 'zoom';
+  close.type = 'button'; close.textContent = 'close ×';
+  box.appendChild(close); box.appendChild(big);
+  document.body.appendChild(box);
+  function shut() { box.close(); }
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      var img = a.querySelector('img');
+      big.src = a.href; big.alt = img ? img.alt : '';
+      box.showModal(); box.scrollTop = 0;
+      document.documentElement.classList.add('zoomed');
+    });
+  });
+  close.addEventListener('click', shut);
+  box.addEventListener('click', function (e) { if (e.target === box) shut(); });
+  box.addEventListener('close', function () { document.documentElement.classList.remove('zoomed'); });
+})();
