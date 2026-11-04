@@ -158,6 +158,7 @@
     requestAnimationFrame(frame);
     if (!g) return;
     if (COARSE && !RM && hot) { t += .02; x = W * (.5 + .34 * Math.sin(t)); y = H * (.45 + .36 * Math.cos(t * 1.3)); dirty = true; }
+    else if (COARSE && !within) { x = -999; y = -999; }
     var goal = within || hot ? 1 : 0;
     if (Math.abs(goal - wake) > .004) { wake += (goal - wake) * .05; dirty = true; }
     var live = false;
@@ -194,8 +195,11 @@
     var b = cv.getBoundingClientRect(); x = e.clientX - b.left; y = e.clientY - b.top; within = true; dirty = true;
   });
   box.addEventListener('pointerleave', function () { x = -999; y = -999; within = false; dirty = true; });
-  if (COARSE) box.querySelector('.label').textContent = 'i wake up on my own';
-  if (COARSE) new IntersectionObserver(function (es) { hot = es[0].isIntersecting; }, { threshold: .4 }).observe(box);
+  if (COARSE) {
+    box.querySelector('.label').textContent = 'tap to wake me up';
+    box.addEventListener('click', function () { hot = !hot; });
+    new IntersectionObserver(function (es) { if (!es[0].isIntersecting) hot = false; }).observe(box);
+  }
   img.onload = build;
   img.src = box.dataset.src;
   window.addEventListener('resize', build);
